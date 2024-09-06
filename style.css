@@ -1,85 +1,44 @@
 /* Styles for video background */
 .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  
-  .video-background video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Content Styles */
-  .content {
-    color: white;
-    text-align: center;
-    margin-top: 15vh;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.5em;
-  }
-  /* Blooming Flower Styles */
-.flower {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
-  animation: bloom 3s ease-in-out infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.petal {
+.video-background video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   position: absolute;
-  width: 20px; /* Lebih kecil dan elips */
-  height: 50px;
-  background-color: pink;
-  border-radius: 50% 50% 0 0; /* Membuat bentuk kelopak bunga */
-  transform-origin: bottom center;
-  opacity: 0;
-  animation: petal-animation 2s ease forwards;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Mengatur posisi rotasi setiap kelopak */
-.petal:nth-child(1) {
-  transform: rotate(0deg) translateY(-20px);
-  animation-delay: 0.2s;
+/* Content Styles */
+.content {
+  color: white;
+  text-align: center;
+  margin-top: 15vh;
+  padding: 20px;
 }
 
-.petal:nth-child(2) {
-  transform: rotate(72deg) translateY(-20px);
-  animation-delay: 0.4s;
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
-.petal:nth-child(3) {
-  transform: rotate(144deg) translateY(-20px);
-  animation-delay: 0.6s;
+p {
+  font-size: 1.5em;
 }
 
-.petal:nth-child(4) {
-  transform: rotate(216deg) translateY(-20px);
-  animation-delay: 0.8s;
-}
 
-.petal:nth-child(5) {
-  transform: rotate(288deg) translateY(-20px);
-  animation-delay: 1s;
-}
+
+/* Button Styles */
 .button {
   display: inline-block;
   text-decoration: none;
@@ -105,7 +64,7 @@
   font-weight: bold;
 }
 
-/* Animasi kelopak bunga mekar */
+/* Animations */
 @keyframes petal-animation {
   0% {
     transform: scale(0.1) translateY(-20px);
@@ -121,7 +80,6 @@
   }
 }
 
-/* Animasi bunga berdenyut */
 @keyframes bloom {
   0%, 100% {
     transform: scale(1);
@@ -131,89 +89,92 @@
   }
 }
 
-  
-  /* Photo Grid */
-  .photo-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
+/* Photo Grid */
+.photo-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photo-grid img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Popup Modal */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.popup-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
   }
-  
+
+  p {
+    font-size: 1.2em;
+  }
+
   .photo-grid img {
-    width: 200px;
-    height: 200px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 150px;
+    height: 150px;
   }
-  
-  .photo-grid img:hover {
-    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 480px) {
+  .content {
+    margin-top: 10vh;
   }
-  
-  /* Popup Modal */
-  .popup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+
+  h1 {
+    font-size: 1.5em;
   }
-  
-  .popup-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+
+  p {
+    font-size: 1em;
   }
-  
-  .close {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
+
+  .photo-grid img {
+    width: 100px;
+    height: 100px;
   }
-  
-  /* Responsive Design */
-  @media only screen and (max-width: 768px) {
-    h1 {
-      font-size: 2em;
-    }
-  
-    p {
-      font-size: 1.2em;
-    }
-  
-    .photo-grid img {
-      width: 150px;
-      height: 150px;
-    }
-  }
-  
-  @media only screen and (max-width: 480px) {
-    .content {
-      margin-top: 10vh;
-    }
-  
-    h1 {
-      font-size: 1.5em;
-    }
-  
-    p {
-      font-size: 1em;
-    }
-  
-    .photo-grid img {
-      width: 100px;
-      height: 100px;
-    }
-  }
-  
+}
+
+.music-control {
+  text-align: center;
+  margin-top: 20px;
+}
