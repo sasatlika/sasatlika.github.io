@@ -11,3 +11,6 @@ function showPopup(imageSrc) {
     popup.style.display = "none";
   }
   
+  // Automatically play background music
+var backgroundMusic = document.getElementById("backgroundMusic");
+backgroundMusic.volume = 0.5; // Set volume to 50%
