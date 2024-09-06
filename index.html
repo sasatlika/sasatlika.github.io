@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Rasa Syukur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop id="bgVideo">
+      <source src="assets/background.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h1>Website Sasat Lika</h1>
+    <p>Di perjalanan yang panjang ini, jangan milik siapapun dulu, ya”</p>
+        <p> — 3726 mdpl.</p>
+    
+    <!-- Photo Grid -->
+    <div class="photo-grid">
+      <img src="assets/photo_2024-09-06_08-59-43.jpg" alt="Photo 1" onclick="showPopup('assets/photo_2024-09-06_08-59-43.jpg')">
+      <img src="assets/photo_2024-09-06_08-59-45.jpg" alt="Photo 2" onclick="showPopup('assets/photo_2024-09-06_08-59-45.jpg')">
+      <img src="assets/photo_2024-09-06_08-59-46.jpg" alt="Photo 3" onclick="showPopup('assets/photo_2024-09-06_08-59-46.jpg')">
+    </div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="photoPopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img class="popup-content" id="popupImg">
+  </div>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
